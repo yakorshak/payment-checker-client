@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
+import Button from '@mui/material/Button'
 
 export default function Home() {
   return (
@@ -11,11 +12,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <p>Hello</p>
+        <Button variant="contained">Hello World</Button>
       </main>
 
-      <footer className={styles.footer}>
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
   )
 }

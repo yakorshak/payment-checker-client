@@ -1,20 +1,9 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  FormControlLabel,
-  Grid,
-  Radio,
-  RadioGroup,
-  TextField,
-  Typography,
-} from '@mui/material'
+import { Box, Button, Grid, TextField, Typography } from '@mui/material'
 import Header from '../../components/common/Header'
-
 import BlankLayout from '../../layouts/BankLayout'
 import BaseContainer from '../../layouts/BaseContainer'
 
-const SignUp = () => {
+const LogIn = () => {
   return (
     <div>
       <BlankLayout>
@@ -24,7 +13,7 @@ const SignUp = () => {
             <Grid container columns={12}>
               <Grid item sm={12}>
                 <Typography variant="h5" fontWeight={700} marginBottom={'20px'}>
-                  Sign up to Payment Checker
+                  Log in to Payment Checker
                 </Typography>
               </Grid>
               <Grid item sm={12}>
@@ -45,31 +34,11 @@ const SignUp = () => {
                   sx={{ mb: '20px' }}
                 />
               </Grid>
-              <Grid item sm={12} marginBottom={'15px'}>
-                <FormControl>
-                  <RadioGroup
-                    aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="I want to be a checker"
-                    name="radio-buttons-group"
-                  >
-                    <FormControlLabel
-                      value="checker"
-                      control={<Radio />}
-                      label="I want to be a checker"
-                    />
-                    <FormControlLabel
-                      value="company"
-                      control={<Radio />}
-                      label="I am a company"
-                    />
-                  </RadioGroup>
-                </FormControl>
-              </Grid>
               <Grid item sm={7}>
-                <Button variant="contained">Sign up</Button>
+                <Button variant="contained">Log in</Button>
               </Grid>
               <Grid item sm={5}>
-                <Button variant="text">I have an account</Button>
+                <Button variant="text">Forgot password</Button>
               </Grid>
             </Grid>
           </Box>
@@ -79,4 +48,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default LogIn

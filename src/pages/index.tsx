@@ -1,17 +1,16 @@
-import { Box, Container, Typography, Grid, Button, Icon } from '@mui/material'
+import { Typography, Grid, Button } from '@mui/material'
 import Head from 'next/head'
-import Header from '../components/Header'
+import Header from '../components/common/Header'
 import BaseContainer from '../layouts/BaseContainer'
 import FullWidthLayout from '../layouts/FullWidthLayout'
 import theme from '../config/theme'
-import MainCharacterSvg from '../components/MainCharacterSvg'
-import MainStepper from '../components/MainStepper'
-import MainCharacterPng from '../components/MainCharacterPng'
+import MainStepper from '../components/home/MainStepper'
+import MainCharacterPng from '../components/home/MainCharacterPng'
 import Image from 'next/image'
 import s2b from '../../public/images/s2b.png'
 import bwin from '../../public/images/bwin.png'
 import bet365 from '../../public/images/bet365.png'
-import { padding } from '@mui/system'
+import BlankLayout from '../layouts/BankLayout'
 
 export default function Home() {
   return (
@@ -21,15 +20,26 @@ export default function Home() {
         <meta name="description" content="Content" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
+      <BlankLayout>
+        <Header>
+          <Button
+            color="secondary"
+            size="medium"
+            variant="text"
+            sx={{ mr: '20px' }}
+          >
+            Join as a company
+          </Button>
+          <Button color="secondary" size="medium" variant="outlined">
+            Sign in
+          </Button>
+        </Header>
         <FullWidthLayout
           backgroundColor={theme?.palette?.primary?.main}
           height={'100vh'}
         >
           <BaseContainer>
-            <Header></Header>
-            <Grid sx={{ mt: '150px' }} container columns={12}>
+            <Grid paddingTop={'200px'} container columns={12}>
               <Grid item xs={12}>
                 <Typography
                   variant="h4"
@@ -132,8 +142,7 @@ export default function Home() {
             </Typography>
           </BaseContainer>
         </FullWidthLayout>
-      </main>
-      <footer></footer>
+      </BlankLayout>
     </div>
   )
 }

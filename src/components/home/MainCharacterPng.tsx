@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import mypic from '../../public/images/character.png'
+import mypic from '../../../public/images/character.png'
 
 const MainCharacterPng = (props: any) => {
   return (

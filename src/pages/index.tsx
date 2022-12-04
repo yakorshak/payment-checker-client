@@ -12,7 +12,7 @@ import bwin from '../../public/images/bwin.png'
 import bet365 from '../../public/images/bet365.png'
 import BlankLayout from '../layouts/BankLayout'
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <Head>
@@ -146,3 +146,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

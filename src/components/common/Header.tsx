@@ -1,5 +1,7 @@
-import { AppBar, Toolbar, Typography } from '@mui/material'
+import { AppBar, makeStyles, Toolbar, Typography } from '@mui/material'
+
 import BaseContainer from '../../layouts/BaseContainer'
+import { CustomizedLink } from './CustomizedLink'
 import { IHeader } from './types'
 
 const Header = ({ children, ...props }: IHeader) => (
@@ -7,7 +9,7 @@ const Header = ({ children, ...props }: IHeader) => (
     <BaseContainer>
       <Toolbar disableGutters={true}>
         <Typography style={{ flexGrow: 1, fontWeight: 900 }}>
-          Payment Checker
+          <CustomizedLink href="/">Payment Checker</CustomizedLink>
         </Typography>
         {children}
       </Toolbar>

@@ -1,6 +1,6 @@
 import { Box, Button, Grid, TextField, Typography } from '@mui/material'
 import Header from '../../components/common/Header'
-import BlankLayout from '../../layouts/BankLayout'
+import BlankLayout from '../../layouts/BlankLayout'
 import BaseContainer from '../../layouts/BaseContainer'
 
 const LogIn = () => {

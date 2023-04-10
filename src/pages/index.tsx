@@ -1,4 +1,4 @@
-import { Typography, Grid, Button } from '@mui/material'
+import { Typography, Grid, Button, useMediaQuery } from '@mui/material'
 import Head from 'next/head'
 import Header from '../components/common/Header'
 import BaseContainer from '../layouts/BaseContainer'
@@ -7,12 +7,16 @@ import theme from '../config/theme'
 import MainStepper from '../components/home/MainStepper'
 import MainCharacterPng from '../components/home/MainCharacterPng'
 import Image from 'next/image'
-import s2b from '../../public/images/s2b.png'
-import bwin from '../../public/images/bwin.png'
-import bet365 from '../../public/images/bet365.png'
-import BlankLayout from '../layouts/BankLayout'
+import logo1 from '../../public/images/logo1.jpg'
+import logo2 from '../../public/images/logo2.jpg'
+import logo3 from '../../public/images/logo3.jpg'
+import BlankLayout from '../layouts/BlankLayout'
+import { useRouter } from 'next/router'
 
 const Home = () => {
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+  const router = useRouter()
+
   return (
     <div>
       <Head>
@@ -27,10 +31,16 @@ const Home = () => {
             size="medium"
             variant="text"
             sx={{ mr: '20px' }}
+            onClick={() => router.push('/signup')}
           >
             Join as a company
           </Button>
-          <Button color="secondary" size="medium" variant="outlined">
+          <Button
+            color="secondary"
+            size="medium"
+            variant="outlined"
+            onClick={() => router.push('/login')}
+          >
             Sign in
           </Button>
         </Header>
@@ -42,7 +52,7 @@ const Home = () => {
             <Grid paddingTop={'200px'} container columns={12}>
               <Grid item xs={12}>
                 <Typography
-                  variant="h4"
+                  variant={isSmallScreen ? 'h6' : 'h4'}
                   fontWeight={700}
                   color="white"
                   textAlign={'center'}
@@ -53,7 +63,11 @@ const Home = () => {
                 </Typography>
               </Grid>
               <Grid item xs={12} sx={{ mt: '50px' }}>
-                <Typography variant="h5" textAlign={'center'} color="white">
+                <Typography
+                  variant={isSmallScreen ? 'h6' : 'h5'}
+                  textAlign={'center'}
+                  color="white"
+                >
                   Become a checker spending a few minutes to earn your money.
                   Its easy-peasy!
                 </Typography>
@@ -65,12 +79,21 @@ const Home = () => {
                 justifyContent={'right'}
                 sx={{ pr: '10px', pt: '20px' }}
               >
-                <Button color="secondary" variant="contained">
+                <Button
+                  color="secondary"
+                  variant="contained"
+                  onClick={() => router.push('/signup')}
+                >
                   Find a job
                 </Button>
               </Grid>
               <Grid item xs={6} sx={{ pl: '10px', pt: '20px' }}>
-                <Button color="secondary">Find checkers</Button>
+                <Button
+                  color="secondary"
+                  onClick={() => router.push('/signup')}
+                >
+                  Find checkers
+                </Button>
               </Grid>
               <Grid
                 item
@@ -80,7 +103,7 @@ const Home = () => {
                   pt: '20px',
                 }}
               >
-                <MainCharacterPng></MainCharacterPng>
+                {!isSmallScreen && <MainCharacterPng></MainCharacterPng>}
               </Grid>
             </Grid>
           </BaseContainer>
@@ -101,6 +124,7 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid
+              item
               xs={12}
               sx={{
                 display: 'flex',
@@ -110,7 +134,7 @@ const Home = () => {
             >
               <MainStepper></MainStepper>
             </Grid>
-            <Grid xs={12}>
+            <Grid item xs={12}>
               <Typography
                 variant="h2"
                 fontWeight={500}
@@ -120,14 +144,14 @@ const Home = () => {
                 Our partners
               </Typography>
             </Grid>
-            <Grid xs={4}>
-              <Image src={bet365} alt="bet365" height={110} width={200}></Image>
+            <Grid item sm={4} xs={12} display="flex" justifyContent={'center'}>
+              <Image src={logo1} alt="logo1" height={200} width={250}></Image>
             </Grid>
-            <Grid xs={4} marginTop={'-50px'}>
-              <Image src={s2b} alt="s2b" height={200} width={200}></Image>
+            <Grid item sm={4} xs={12} display="flex" justifyContent={'center'}>
+              <Image src={logo2} alt="logo2" height={200} width={200}></Image>
             </Grid>
-            <Grid xs={4}>
-              <Image src={bwin} alt="wh" height={70} width={200}></Image>
+            <Grid item sm={4} xs={12} display="flex" justifyContent={'center'}>
+              <Image src={logo3} alt="logo3" height={200} width={200}></Image>
             </Grid>
           </Grid>
         </BaseContainer>
@@ -138,7 +162,7 @@ const Home = () => {
               color={'white'}
               textAlign={'center'}
             >
-              © 2022 Payment-checker.com
+              © 2023 Payment-checker.com
             </Typography>
           </BaseContainer>
         </FullWidthLayout>
